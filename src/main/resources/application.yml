@@ -1,0 +1,26 @@
+server: # Configuración del servidor web de Lavalink
+  port: 2333
+  address: 0.0.0.0
+lavalink:
+  plugins:
+    # Plugins oficiales (YouTube está restringido, usaremos otros por defecto)
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.1"
+      repository: "https://maven.lavalink.dev/releases"
+  server:
+    password: "youshallnotpass"
+    sources:
+      youtube: true
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
+    bufferDurationMs: 400 # Buffer para evitar lag
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 10
+    resamplingQuality: LOW
+    trackStuckThresholdMs: 10000
+metrics:
+  prometheus:
+    enabled: false
